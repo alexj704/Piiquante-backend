@@ -18,6 +18,7 @@ exports.createSauce = (req, res, next) => {
         .catch(error => { res.status(400).json({ error }) })
 }
 
+
 exports.getAllSauces = (req, res, next) => {
     Sauce.find()
         .then(sauces => res.status(200).json(sauces))
@@ -39,7 +40,7 @@ exports.modifySauce = (req, res, next) => {
     Sauce.findOne({ _id: req.params.id })
         .then((sauce) => {
             if (sauce.userId !== req.auth.userId) {
-                res.status(401).json({ message: 'Non-autorisé' })
+                res.status(403).json({ message: 'Non-autorisé' })
             }
             else {
                 Sauce.updateOne({ _id: req.params.id }, { ...sauceObject, _id: req.params.id })
@@ -54,7 +55,7 @@ exports.deleteSauce = (req, res, next) => {
     Sauce.findOne({ _id: req.params.id })
         .then(sauce => {
             if (sauce.userId !== req.auth.userId) {
-                res.status(401).json({ message: 'Non-autorisé' })
+                res.status(403).json({ message: 'Non-autorisé' })
             }
             else {
                 const filename = sauce.imageUrl.split('/images/')[1]

@@ -40,10 +40,18 @@ exports.modifySauce = (req, res, next) => {
     Sauce.findOne({ _id: req.params.id })
         .then((sauce) => {
             if (sauce.userId !== req.auth.userId) {
-                res.status(403).json({ message: 'Non-autorisé' })
+                res.status(403).json({ message: "Vous n'êtes pas autorisé à modifier cette sauce" })
+            }
+            else if (req.file) {
+                const filename = sauce.imageUrl.split('/images/')[1]
+                fs.unlink(`images/${filename}`, () => {
+                    Sauce.updateOne({ _id: req.params.id }, { ...sauceObject, _id: req.params.id })
+                        .then(() => res.status(200).json({ message: 'Sauce modifiée!' }))
+                        .catch(error => res.status(400).json({ error }))
+                })
             }
             else {
-                Sauce.updateOne({ _id: req.params.id }, { ...sauceObject, _id: req.params.id })
+                Sauce.updateOne({ _id: req.params.id }, { ...req.body, _id: req.params.id })
                     .then(() => res.status(200).json({ message: 'Sauce modifiée!' }))
                     .catch(error => res.status(400).json({ error }))
             }
@@ -55,7 +63,7 @@ exports.deleteSauce = (req, res, next) => {
     Sauce.findOne({ _id: req.params.id })
         .then(sauce => {
             if (sauce.userId !== req.auth.userId) {
-                res.status(403).json({ message: 'Non-autorisé' })
+                res.status(403).json({ message: "Vous n'êtes pas autorisé à supprimer cette sauce" })
             }
             else {
                 const filename = sauce.imageUrl.split('/images/')[1]

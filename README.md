@@ -25,7 +25,7 @@ Backend du projet 6 de la formation Developpeur Web d'OpenClassrooms
 ### Installing
 
 - Cloner le repo et le copier dans le dossier avec le Frontend
-- Aller sur le dossier racine du backend et lancer la commande npm install pour installer les d�pendances
+- Aller sur le dossier racine du backend et lancer la commande npm install pour installer les dependances
 - Creer un fichier .env dans la racine contenant les cles suivantes:
   SECRET_DB (Le lien complet de votre base de donnees exemple: mongodb+srv://<username>:<password>@cluster0.cfpqme9.mongodb.net/?retryWrites=true&w=majority)
   SECRET_TOKEN (le token necessaire a l'authentification exemple: MY_SECRET_TOKEN)

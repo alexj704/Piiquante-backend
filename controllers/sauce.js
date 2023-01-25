@@ -50,11 +50,18 @@ exports.modifySauce = (req, res, next) => {
             }
             else if (req.file) {
                 const filename = sauce.imageUrl.split('/images/')[1]
-                fs.unlink(`images/${filename}`, () => {
-                    Sauce.updateOne({ _id: req.params.id }, { ...sauceObject, _id: req.params.id })
-                        .then(() => res.status(200).json({ message: 'Sauce modifiée!' }))
-                        .catch(error => res.status(400).json({ error }))
-                })
+                Sauce.updateOne({ _id: req.params.id }, { ...sauceObject, _id: req.params.id })
+                    .then(() => {
+                        res.status(200).json({ message: 'Sauce modifiée!' })
+                        fs.unlink(`images/${filename}`, () => {
+                        })
+                    })
+                    .catch(error => {
+                        const filename2 = sauceObject.imageUrl.split('/images/')[1]
+                        res.status(400).json({ error })
+                        fs.unlink(`images/${filename2}`, () => {
+                        })
+                    })
             }
             else {
                 Sauce.updateOne({ _id: req.params.id }, { ...req.body, _id: req.params.id })

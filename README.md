@@ -1,10 +1,8 @@
 # Piiquante - Backend - Projet OpenClassrooms
 
-[![forthebadge](https://forthebadge.com/images/badges/uses-html.svg)](https://forthebadge.com) [![forthebadge](https://forthebadge.com/images/badges/uses-css.svg)](https://forthebadge.com)
-
 Projet 6 de la formation Développeur Web d'OpenClassrooms
 
-Backend du projet Piiquante 
+Backend du projet Piiquante
 
 Pour ce projet j'ai dû créer le backend du site Piiquante en partant de zéro avec NodeJs et le framework Express. La base de données est gérée avec mongodb.
 
@@ -30,7 +28,7 @@ Pour ce projet j'ai dû créer le backend du site Piiquante en partant de zéro 
     "multer": "^1.4.5-lts.1",
     "nodemon": "^2.0.20",
     "password-validator": "^5.3.0"
-  
+
 ## Fabriqué avec
 
 - Visual Studio Code

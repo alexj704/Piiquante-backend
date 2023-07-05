@@ -9,7 +9,7 @@ const textValidator = [
     }),
     validate({
         validator: 'matches',
-        arguments: /^[0-9a-záàâäãåçéèêëíìîïñóòôöõúùûüýÿæœ.\s-]+$/i,
+        arguments: /^[0-9a-záàâäãåçéèêëíìîïñóòôöõúùûüýÿæœ'.\s-]+$/i,
         message: 'Name should contain alpha-numeric characters and space only'
     }),
 

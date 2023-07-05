@@ -1,14 +1,23 @@
-# Project Title
+# Piiquante - Backend - Projet OpenClassrooms
 
-Backend Piiquante
+[![forthebadge](https://forthebadge.com/images/badges/uses-html.svg)](https://forthebadge.com) [![forthebadge](https://forthebadge.com/images/badges/uses-css.svg)](https://forthebadge.com)
 
-## Description
+Projet 6 de la formation Développeur Web d'OpenClassrooms
 
-Backend du projet 6 de la formation Developpeur Web d'OpenClassrooms
+Backend du projet Piiquante 
 
-## Getting Started
+Pour ce projet j'ai dû créer le backend du site Piiquante en partant de zéro avec NodeJs et le framework Express. La base de données est gérée avec mongodb.
 
-### Dependencies
+## Pour commencer
+
+- Cloner le repo et le copier dans le dossier avec le Frontend
+- Aller sur le dossier racine du backend et lancer la commande npm install pour installer les dependances
+- Creer un fichier .env dans la racine contenant les cles suivantes:
+  SECRET_DB (Le lien complet de votre base de donnees exemple: mongodb+srv://<username>:<password>@<host>/?retryWrites=true&w=majority)
+  SECRET_TOKEN (le token necessaire a l'authentification exemple: MY_SECRET_TOKEN)
+- Pour lancer le backend lancer la commande npm start depuis la racine du backend.
+
+## Dependances
 
     "bcrypt": "^5.1.0",
     "dotenv": "^16.0.3",
@@ -21,21 +30,13 @@ Backend du projet 6 de la formation Developpeur Web d'OpenClassrooms
     "multer": "^1.4.5-lts.1",
     "nodemon": "^2.0.20",
     "password-validator": "^5.3.0"
+  
+## Fabriqué avec
 
-### Installing
+- Visual Studio Code
+- NodeJs
+- Express
 
-- Cloner le repo et le copier dans le dossier avec le Frontend
-- Aller sur le dossier racine du backend et lancer la commande npm install pour installer les dependances
-- Creer un fichier .env dans la racine contenant les cles suivantes:
-  SECRET_DB (Le lien complet de votre base de donnees exemple: mongodb+srv://<username>:<password>@<host>/?retryWrites=true&w=majority)
-  SECRET_TOKEN (le token necessaire a l'authentification exemple: MY_SECRET_TOKEN)
+## Auteurs
 
-### Executing program
-
-- Pour lancer le backend lancer la commande npm start depuis la racine du backend.
-
-## Authors
-
-Contributors names and contact info
-
-Alexandre JOIGNANT
+- **Alexandre JOIGNANT** _alias_ [@alexj704](https://github.com/alexj704)
